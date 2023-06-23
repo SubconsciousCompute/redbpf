@@ -38,7 +38,8 @@ pub fn probe(ctx: XdpContext) -> XdpResult {
     _ => panic!("NO IPv4")
     };
     //let ip = unsafe { *ctx.ip()? };
-    let source_addr = unsafe{u32::from_be((*ip).saddr)};
+    //let source_addr = unsafe{u32::from_be((*ip).saddr)};
+    let source_addr = unsafe{u32::from_be((*ip).__bindgen_anon_1.__bindgen_anon_1.saddr)};
     // get the knock sequence as configured by user space
     let target_seq = unsafe {
         let seq_id = 0u8;
